@@ -1,7 +1,7 @@
 # Projeto de IOT com Python
 
 ## Alunos:
-    - Dorcival Leite
+    - Dorcival Leite (https://github.com/DorcivalLeite)
     - Fabiano Leite (https://www.github.com/fabianomarechal)
     - Enan Dorta (https://github.com/EnanDorta)
     - Italo Handerson (https://github.com/italowins)
