@@ -8,3 +8,12 @@
     - Jullyo José
     - Raphael
     - Wagner Dominó
+
+
+# TO-DO
+    - Classe para Objetos:
+        1. Ar Condicionado
+        2. Lâmpada
+    - Servidor
+    - Cliente
+    - Programa principal (main.py) para iniciar a simulação
