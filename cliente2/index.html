@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IoT com Python</title>
+	<style type="text/css">
+		body {
+			background: #ccc;
+		}
+		.lampada {
+			background-image: url(lampada.svg);
+		    background-position: left;
+		    background-size: cover;
+		    width: 209px;
+		    height: 313px;
+		    overflow: hidden;
+		}
+		.lampada[disabled] {
+			background-image: url(lampada.svg);
+		    background-position: right;
+		    background-size: cover;
+		    width: 209px;
+		    height: 313px;
+		    overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="lampada" disabled=false> </div>
+	<!-- <div id="lampada2"> </div> -->
+	<!-- <img src="lampada.svg" width="300px"> -->
+</body>
+</html>
