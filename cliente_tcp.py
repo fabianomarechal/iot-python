@@ -9,7 +9,7 @@ def client(host='localhost', port=1060):
 	msg = input("END para sair;")
 	while(msg != "END"):
 		sock.send(str.encode(msg))
-		reply = sock.recv(1)
+		reply = sock.recv(60)
 		print('The server said,', repr(reply))
 		msg = input("END para sair;")
 
