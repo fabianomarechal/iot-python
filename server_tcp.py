@@ -3,7 +3,6 @@
 import socket
 from objetos import ArCondicionado,Lampada
 
-
 class Server:
 
 	message = bytearray(4)
@@ -32,17 +31,16 @@ class Server:
 		self.ar = ArCondicionado()
 		self.lampada = Lampada()
 
-
 		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		sock.bind(('localhost', 6070))
 		sock.listen(4)
 		print('Escutando na porta: ', sock.getsockname())
-
 		sc, sockname = sock.accept()
 		print('Aceitamos conexão de: ', sockname)
 		print('Nome do Socket: ', sc.getsockname())
 		print('Peer do Socket: ', sc.getpeername())
+
 		while True:
 			self.message = sc.recv(4)
 			print('Recebendo 8 bits de mensagem: ', repr(self.message))
@@ -53,3 +51,4 @@ class Server:
 
 if __name__ == '__main__':
 	Server()
+

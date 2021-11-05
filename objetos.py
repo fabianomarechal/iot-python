@@ -27,7 +27,6 @@ class Objeto:
 	# Retorna o estado atual do aparelho
 	def get_status(self):
 		pass
-		
 
 class ArCondicionado(Objeto):
 
@@ -44,7 +43,6 @@ class ArCondicionado(Objeto):
 
 	def get_status(self):
 		return bytearray([0, self.ligado, self.TEMPERATURAS[self.potencia]])
-
 
 class Lampada(Objeto):
 	nome = "Lâmpada"
