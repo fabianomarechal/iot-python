@@ -2,9 +2,10 @@
 # Classe para o Objeto Ar-Condicionado
 
 class Objeto:
+
 	def __init__(self):
 		self.nome: str = ""
-		self.ligado: bool = False
+		self.ligado = 0
 		self.potencia: int = 0
 
 	def aumentarPotencia(self):
@@ -24,27 +25,29 @@ class Objeto:
 		self.desligado = False
 
 	# Retorna o estado atual do aparelho
-	def __str__(self) -> str:
-		return "O objeto {0} está: {1}. A potencia é = {2}.".format(self.nome, 'Ligado' if self.ligado else 'Desligado', self.potencia)
+	def get_status(self):
+		pass
+		
 
 class ArCondicionado(Objeto):
 
 	nome = "Ar Condicionado"
-	TEMPERATURAS = (
-		{0, '16ºC'},
-		{1, '18ºC'},
-		{2, '20ºC'},
-		{3, '22ºC'},
-		{4, '24ºC'},
-	)
+	TEMPERATURAS = ( 16, 18, 20, 22, 24	)
 
-	def aumentarTemperatura(self):
+	def aumentarPotencia(self):
 		if(self.potencia < 4):
-			self.aumentarPotencia()
+			Objeto.aumentarPotencia(self)
 
-	def diminuirTemperatura(self):
+	def diminuirPotencia(self):
 		if(self.potencia>0):
-			self.diminuirPotencia()
+			Objeto.diminuirPotencia(self)
+
+	def get_status(self):
+		return bytearray([0, self.ligado, self.TEMPERATURAS[self.potencia]])
+
 
 class Lampada(Objeto):
 	nome = "Lâmpada"
+
+	def get_status(self):
+		return bytearray([1, self.ligado, self.potencia])
